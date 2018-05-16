@@ -1,0 +1,45 @@
+﻿<Window x:Class="note.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:note"
+        mc:Ignorable="d"
+        Title="Note" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Grid.Column="1" Fill="#FF476DB9"></Rectangle>
+        <StackPanel Grid.Column="1" Margin="10" RenderTransformOrigin="0.521,0.616">
+            <Button x:Name="new" Margin="0 0 0 10" Click="new_Click">New</Button>
+            <Button x:Name="open" Margin="0 0 0 10" Click="open_Click">Open</Button>
+            <Button x:Name="save" Content="save" Margin="0,0,0.4,0" Click="save_Click"/>
+
+            <WrapPanel>
+                <Grid x:Name="big" Width="30" Height="50" Margin="20 10 10 0" MouseDown="big_MouseDown">
+                    <TextBlock FontSize="40">+</TextBlock>
+                </Grid>
+                <Grid x:Name="sma" Width="30" Height="50" Margin="20 10 10 0" MouseDown="sma_MouseDown">
+                    <TextBlock FontSize="40">-</TextBlock>
+                </Grid>
+            </WrapPanel>
+            <WrapPanel>
+                <Grid x:Name="line" Width="20" Height="32" Margin="20 10 10 0" MouseDown="line_MouseDown">
+                    <TextBlock FontSize="25" TextDecorations="underline" >U</TextBlock>
+                </Grid>
+                <Grid x:Name="slide" Width="20" Height="32" Margin="10 10 10 0" MouseDown="slide_MouseDown">
+                    <TextBlock FontSize="25" FontStyle="Italic">/</TextBlock>
+                </Grid>
+                <Grid x:Name="bold" Width="20" Height="32" Margin="10 10 10 0" MouseDown="bold_MouseDown">
+                    <TextBlock FontSize="25" FontWeight="Bold" >B</TextBlock>
+                </Grid>
+            </WrapPanel>
+         </StackPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <TextBox x:Name="book" FontSize="20" AcceptsReturn="True" TextWrapping="Wrap" Background="#FF3DC0C0" TextDecorations="{x:Null}"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
