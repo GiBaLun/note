@@ -5,41 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:note"
         mc:Ignorable="d"
-        Title="Note" Height="350" Width="525">
+        Title="Note" Height="350" Width="530">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="150"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Rectangle Grid.Column="1" Fill="#FF476DB9"></Rectangle>
-        <StackPanel Grid.Column="1" Margin="10" RenderTransformOrigin="0.521,0.616">
-            <Button x:Name="new" Margin="0 0 0 10" Click="new_Click">New</Button>
-            <Button x:Name="open" Margin="0 0 0 10" Click="open_Click">Open</Button>
-            <Button x:Name="save" Content="save" Margin="0,0,0.4,0" Click="save_Click"/>
+        <Rectangle Grid.Column="1" Fill="Black"></Rectangle>
+        <StackPanel Grid.Column="1" Margin="10,10,10.4,10.4" RenderTransformOrigin="0.521,0.616">
+            <TextBox x:Name="new" Margin="0 0 0 10" MouseDown="new_MouseDown" Background="Black" Foreground="White">New</TextBox>
+            <TextBox x:Name="open" Margin="0 0 0 10" MouseDown="open_MouseDown" Background="Black" Foreground="White">Open</TextBox>
+            <TextBox x:Name="save" Margin="0,0,0.4,0" MouseDown="save_MouseDown" Background="Black" Foreground="White">save</TextBox>
 
             <WrapPanel>
                 <Grid x:Name="big" Width="30" Height="50" Margin="20 10 10 0" MouseDown="big_MouseDown">
-                    <TextBlock FontSize="40">+</TextBlock>
+                    <TextBlock FontSize="40" Foreground="White">+</TextBlock>
                 </Grid>
                 <Grid x:Name="sma" Width="30" Height="50" Margin="20 10 10 0" MouseDown="sma_MouseDown">
-                    <TextBlock FontSize="40">-</TextBlock>
+                    <TextBlock FontSize="40" Foreground="White">-</TextBlock>
                 </Grid>
             </WrapPanel>
             <WrapPanel>
-                <Grid x:Name="line" Width="20" Height="32" Margin="20 10 10 0" MouseDown="line_MouseDown">
-                    <TextBlock FontSize="25" TextDecorations="underline" >U</TextBlock>
+                <Grid x:Name="line" Width="20" Height="32" Margin="10 10 10 0" MouseDown="line_MouseDown">
+                    <TextBlock FontSize="25" TextDecorations="underline" Foreground="White">U</TextBlock>
                 </Grid>
                 <Grid x:Name="slide" Width="20" Height="32" Margin="10 10 10 0" MouseDown="slide_MouseDown">
-                    <TextBlock FontSize="25" FontStyle="Italic">/</TextBlock>
+                    <TextBlock FontSize="25" FontStyle="Italic" Foreground="White">/</TextBlock>
                 </Grid>
                 <Grid x:Name="bold" Width="20" Height="32" Margin="10 10 10 0" MouseDown="bold_MouseDown">
-                    <TextBlock FontSize="25" FontWeight="Bold" >B</TextBlock>
+                    <TextBlock FontSize="25" FontWeight="Bold" Foreground="White">B</TextBlock>
                 </Grid>
             </WrapPanel>
-         </StackPanel>
+            <StackPanel  Margin="10 20 0 0" Orientation="Horizontal">
+                <Ellipse Width="25" Height="25" Fill="Gray" Stroke="LightGray" StrokeThickness="5" x:Name="Black" Margin="20 0 0 0" MouseLeftButtonDown="Black_MouseLeftButtonDown"></Ellipse>
+                <Ellipse Width="25" Height="25" Fill="White" Stroke="LightGray" StrokeThickness="5" x:Name="White" Margin="20 0 0 0" MouseLeftButtonDown="White_MouseLeftButtonDown"></Ellipse>
+            </StackPanel>
+        </StackPanel>
             <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <TextBox x:Name="book" FontSize="20" AcceptsReturn="True" TextWrapping="Wrap" Background="#FF3DC0C0" TextDecorations="{x:Null}"/>
+            <TextBox x:Name="book" FontSize="20" AcceptsReturn="True" TextWrapping="Wrap" Background="Gray"  TextDecorations="{x:Null}"/>
         </ScrollViewer>
     </Grid>
 </Window>

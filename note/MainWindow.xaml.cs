@@ -26,7 +26,7 @@ namespace note
             InitializeComponent();
         }
 
-        private void open_Click(object sender, RoutedEventArgs e)
+        private void open_MouseDown(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dig = new Microsoft.Win32.OpenFileDialog();
 
@@ -40,7 +40,7 @@ namespace note
             }
         }
 
-        private void save_Click(object sender, RoutedEventArgs e)
+        private void save_MouseDown(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.SaveFileDialog dig = new Microsoft.Win32.SaveFileDialog();
 
@@ -54,7 +54,7 @@ namespace note
             }
         }
 
-        private void new_Click(object sender, RoutedEventArgs e)
+        private void new_MouseDown(object sender, RoutedEventArgs e)
         {
             book.Clear();
         }
@@ -97,6 +97,34 @@ namespace note
                 book.FontWeight = FontWeights.Normal;
             else if (book.FontWeight == FontWeights.Normal)
                 book.FontWeight = FontWeights.Bold;
+        }
+
+        private void Black_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Black.Fill == Brushes.Gray)
+            {
+                Black.Fill = Brushes.White;
+                book.Foreground = Brushes.White;
+            }
+            else
+            {
+                Black.Fill = Brushes.Gray;
+                book.Foreground = Brushes.Black;
+            }
+        }
+
+        private void White_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (White.Fill == Brushes.White)
+            {
+                White.Fill = Brushes.Gray;
+                book.Background = Brushes.Gray;
+            }
+            else
+            {
+                White.Fill = Brushes.White;
+                book.Background = Brushes.White;
+            }
         }
     }
 }
