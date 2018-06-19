@@ -14,9 +14,15 @@
 
         <Rectangle Grid.Column="1" Fill="Black"></Rectangle>
         <StackPanel Grid.Column="1" Margin="10,10,10.4,10.4" RenderTransformOrigin="0.521,0.616">
-            <TextBox x:Name="new" Margin="0 0 0 10" MouseDown="new_MouseDown" Background="Black" Foreground="White">New</TextBox>
-            <TextBox x:Name="open" Margin="0 0 0 10" MouseDown="open_MouseDown" Background="Black" Foreground="White">Open</TextBox>
-            <TextBox x:Name="save" Margin="0,0,0.4,0" MouseDown="save_MouseDown" Background="Black" Foreground="White">save</TextBox>
+            <Grid x:Name="new" Margin="0 0 0 10" MouseDown="new_MouseDown" Background="Black" >
+                <TextBlock FontSize="15" Foreground="White">New</TextBlock>
+            </Grid>
+            <Grid x:Name="open" Margin="0 0 0 10" MouseDown="open_MouseDown" Background="Black" >
+                <TextBlock FontSize="15" Foreground="White">Open</TextBlock>
+            </Grid>
+            <Grid x:Name="save" Margin="0,0,0.4,0" MouseDown="save_MouseDown" Background="Black" >
+                <TextBlock FontSize="15" Foreground="White">Save</TextBlock>
+            </Grid>
 
             <WrapPanel>
                 <Grid x:Name="big" Width="30" Height="50" Margin="20 10 10 0" MouseDown="big_MouseDown">
